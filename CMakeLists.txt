@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 
 project(
-	c_plus_plus_template_project
+	cpp_programming_exercises
 	VERSION 0.0.0.1
-	DESCRIPTION "A template for C++ projects to get started quickly"
+	DESCRIPTION "A set of code samples that server as exercises to improve my skills"
 	LANGUAGES CXX)
 
 include(cmake/Constants.cmake)
@@ -44,7 +44,3 @@ enable_tests()
 
 add_subdirectory(dependencies)
 add_subdirectory(lib)
-add_subdirectory(src)
-add_subdirectory(catch2_test)
-add_subdirectory(gtest_test)
-add_subdirectory(fuzz_test)
