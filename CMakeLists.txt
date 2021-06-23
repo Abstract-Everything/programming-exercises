@@ -43,4 +43,6 @@ enable_static_analyzers()
 enable_tests()
 
 add_subdirectory(dependencies)
-add_subdirectory(lib)
+add_subdirectory(project_euler)
+add_subdirectory(project_euler_results)
+add_subdirectory(project_euler_test)
