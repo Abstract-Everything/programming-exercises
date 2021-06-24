@@ -1,4 +1,6 @@
-add_library(project_euler STATIC project_euler.cpp)
+add_library(project_euler STATIC
+	project_euler.cpp
+	problem_2_even_fibonacci_numbers.cpp)
 
 target_include_directories(
 	project_euler
