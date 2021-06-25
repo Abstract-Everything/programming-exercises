@@ -1,6 +1,7 @@
 add_library(project_euler STATIC
 	project_euler.cpp
-	problem_2_even_fibonacci_numbers.cpp)
+	problem_2_even_fibonacci_numbers.cpp
+	problem_3_largest_prime_factor.cpp)
 
 target_include_directories(
 	project_euler
