@@ -2,6 +2,7 @@
 #include <project_euler/problem_2_even_fibonacci_numbers.hpp>
 #include <project_euler/problem_3_largest_prime_factor.hpp>
 #include <project_euler/problem_4_largest_palindrome_product.hpp>
+#include <project_euler/problem_5_smallest_multiple.hpp>
 
 #include <iostream>
 
@@ -13,5 +14,6 @@ int main()
 		  << "Problem 1: " << sum_multiples_of_3_5(1000) << "\n"
 		  << "Problem 2: " << accumulate_even_fibonacci(4'000'000) << "\n"
 		  << "Problem 3: " << prime_factorization(600'851'475'143).back() << "\n"
-		  << "Problem 4: " << largest_palindrome_product(999) << "\n";
+		  << "Problem 4: " << largest_palindrome_product(999) << "\n"
+		  << "Problem 5: " << smallest_multiple(20) << "\n";
 }
