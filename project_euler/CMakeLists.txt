@@ -1,5 +1,6 @@
 add_library(project_euler STATIC
 	project_euler.cpp
+	common.cpp
 	problem_2_even_fibonacci_numbers.cpp
 	problem_3_largest_prime_factor.cpp
 	problem_4_largest_palindrome_product.cpp

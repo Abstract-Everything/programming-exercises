@@ -1,5 +1,6 @@
 #include "problem_5_smallest_multiple.hpp"
-#include "problem_3_largest_prime_factor.hpp"
+
+#include "common.hpp"
 
 #include <map>
 #include <algorithm>

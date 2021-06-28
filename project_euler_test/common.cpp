@@ -1,4 +1,4 @@
-#include <project_euler/problem_3_largest_prime_factor.hpp>
+#include <project_euler/common.hpp>
 
 #include <gmock/gmock.h>
 #define TEST_NL(test_suite_name, test_name) TEST(test_suite_name, test_name) // NOLINT
