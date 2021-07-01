@@ -23,3 +23,15 @@ TEST_NL(largest_prime_factor, multiple_occuring_factor)
 	auto primes = prime_factorization(8);
 	ASSERT_THAT(primes, ElementsAre(2U, 2U, 2U));
 }
+
+TEST_NL(list_primes, first_prime)
+{
+	auto primes = prime_list(2);
+	ASSERT_THAT(primes, ElementsAre(2U, 3U));
+}
+
+TEST_NL(list_primes, up_to_ten)
+{
+	auto primes = prime_list(5);
+	ASSERT_THAT(primes, ElementsAre(2U, 3U, 5U, 7U, 11U));
+}

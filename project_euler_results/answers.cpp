@@ -4,6 +4,7 @@
 #include <project_euler/problem_4_largest_palindrome_product.hpp>
 #include <project_euler/problem_5_smallest_multiple.hpp>
 #include <project_euler/problem_6_sum_square_difference.hpp>
+#include <project_euler/problem_7_ten_thousand_and_first_prime.hpp>
 
 #include <iostream>
 
@@ -17,5 +18,6 @@ int main()
 		  << "Problem 3: " << largest_prime_factor(600'851'475'143) << "\n"
 		  << "Problem 4: " << largest_palindrome_product(999) << "\n"
 		  << "Problem 5: " << smallest_multiple(20) << "\n"
-		  << "Problem 6: " << sum_square_difference(100U) << "\n";
+		  << "Problem 6: " << sum_square_difference(100U) << "\n"
+		  << "Problem 7: " << ten_thousand_and_first_prime() << "\n";
 }

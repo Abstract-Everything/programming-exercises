@@ -18,6 +18,8 @@ namespace project_euler
 	}
 
 	std::vector<std::size_t> prime_factorization(std::size_t number);
+
+	std::vector<std::size_t> prime_list(std::size_t upper_bound);
 }
 
 #endif
