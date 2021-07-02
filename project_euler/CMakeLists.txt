@@ -6,7 +6,8 @@ add_library(project_euler STATIC
 	problem_4_largest_palindrome_product.cpp
 	problem_5_smallest_multiple.cpp
 	problem_6_sum_square_difference.cpp
-	problem_7_ten_thousand_and_first_prime.cpp)
+	problem_7_ten_thousand_and_first_prime.cpp
+	problem_8_largest_product_in_a_series.cpp)
 
 target_include_directories(
 	project_euler
