@@ -19,7 +19,7 @@ target_link_libraries(
 	project_euler_test
 	PRIVATE project_options
 		project_warnings
-		project_euler
+		project_euler_lib
 		GTest::gtest
 		GTest::gtest_main)
 

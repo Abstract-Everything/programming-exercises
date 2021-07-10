@@ -44,5 +44,3 @@ enable_tests()
 
 add_subdirectory(dependencies)
 add_subdirectory(project_euler)
-add_subdirectory(project_euler_results)
-add_subdirectory(project_euler_test)
