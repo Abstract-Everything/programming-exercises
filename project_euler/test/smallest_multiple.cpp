@@ -13,10 +13,12 @@ TEST_NL(smallest_multiple, single_digit)
 
 TEST_NL(smallest_multiple, two_digits)
 {
-	ASSERT_EQ(smallest_multiple(4U), 12U);
+	const std::size_t multiple = 2 * 2 * 3;
+	ASSERT_EQ(smallest_multiple(4U), multiple);
 }
 
 TEST_NL(smallest_multiple, ten_digits)
 {
-	ASSERT_EQ(smallest_multiple(10U), 2520U);
+	const std::size_t multiple = 2 * 2 * 2 * 3 * 3 * 5 * 7;
+	ASSERT_EQ(smallest_multiple(10U), multiple);
 }

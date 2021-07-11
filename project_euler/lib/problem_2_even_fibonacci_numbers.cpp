@@ -4,12 +4,16 @@
 
 namespace project_euler
 {
-	unsigned int accumulate_even_fibonacci(unsigned int upper_bound)
+	/**
+	 * A brute force approach that manually calculates all finonacci numbers
+	 * under the given upper bound and accumulates the even terms
+	 */
+	std::size_t accumulate_even_fibonacci(std::size_t upper_bound)
 	{
-		unsigned int first = 1;
-		unsigned int sum_first = first;
-		unsigned int sum_second = first;
-		unsigned int sum_even = 0;
+		std::size_t first = 1;
+		std::size_t sum_first = first;
+		std::size_t sum_second = first;
+		std::size_t sum_even = 0;
 		while (sum_second < upper_bound)
 		{
 			sum_first += sum_second;

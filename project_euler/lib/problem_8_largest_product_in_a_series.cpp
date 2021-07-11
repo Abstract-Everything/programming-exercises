@@ -6,6 +6,11 @@
 
 namespace project_euler
 {
+	/**
+	 * Brute force methods which scans the series and calculates the
+	 * product of a substring of characters. The product calculation is
+	 * thrown away when a zero is encountered.
+	 */
 	std::size_t largest_product_in_a_series(const std::string& series, std::size_t digit_count)
 	{
 		std::size_t largest = 0;

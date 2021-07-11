@@ -1,37 +1,17 @@
 #include "problem_4_largest_palindrome_product.hpp"
 
 #include <cmath>
+#include <string>
 
 namespace project_euler
 {
-	std::vector<unsigned int> split_decimal(unsigned int number)
+	bool is_palindrome(std::size_t number)
 	{
-		if (number == 0U)
+		std::string digits = std::to_string(number);
+		for (std::size_t front_index = 0; front_index < digits.size() / 2; ++front_index)
 		{
-			return {number};
-		}
-
-		std::vector<unsigned int> digits;
-		while(number)
-		{
-			digits.push_back(number % 10);
-			number /= 10U;
-		}
-		return digits;
-	}
-
-	bool is_palindrome(unsigned int number)
-	{
-		std::vector<unsigned int> digits = split_decimal(number);
-		for (unsigned int digit_to_check = 0; digit_to_check < digits.size(); ++digit_to_check)
-		{
-			const unsigned int opposite_digit = digits.size() - 1 - digit_to_check;
-			if (opposite_digit <= digit_to_check)
-			{
-				break;
-			}
-			
-			if (digits[digit_to_check] != digits[opposite_digit])
+			const std::size_t back_index = digits.size() - 1 - front_index;
+			if(digits[front_index] != digits[back_index])
 			{
 				return false;
 			}
@@ -39,14 +19,37 @@ namespace project_euler
 		return true;
 	}
 
-	unsigned int largest_palindrome_product(unsigned int upper_bound)
+	/*
+	 * A brute force methods which checks all the possible products for a palindrome.
+	 * The loops check the numbers diagonally (right to left) to ensure that the largest number is tried first.
+	 * E.g for a product of 99
+	 *
+	 * Numbers	99		98		97		96		...
+	 * 99		99 * 99		-------		-------		-------		
+	 * 98		98 * 99		98 * 98		-------		-------
+	 * 97		97 * 99		97 * 98		97 * 97		-------
+	 * 96		96 * 99		96 * 98		96 * 97		96 * 96
+	 *
+	 * The '-------' are skipped because the table is symettric
+	 * The loops check:
+	 * 99 * 99
+	 * 98 * 99
+	 * 98 * 98
+	 * 97 * 99
+	 * 97 * 98
+	 * 96 * 99
+	 * 97 * 97
+	 * ..
+	 * ..
+	 */
+	std::size_t largest_palindrome_product(std::size_t upper_bound)
 	{
-		for (unsigned int diagonal = upper_bound - 1; diagonal > 0; --diagonal)
+		for (std::size_t diagonal = upper_bound; diagonal > 0; --diagonal)
 		{
-			unsigned int product_a = diagonal;
-			for (unsigned int product_b = product_a; product_b < upper_bound && product_a > 0; ++product_b, --product_a)
+			std::size_t product_a = diagonal;
+			for (std::size_t product_b = product_a; product_b < upper_bound && product_a > 0; ++product_b, --product_a)
 			{
-				const unsigned int product = product_a * product_b;
+				const std::size_t product = product_a * product_b;
 				if (is_palindrome(product))
 				{
 					return product;

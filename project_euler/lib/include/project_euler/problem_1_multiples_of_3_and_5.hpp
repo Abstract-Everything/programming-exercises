@@ -1,3 +1,12 @@
+/**
+ * @file
+ *
+ * @section DESCRIPTION
+ * Solution to Problem 1
+ *
+ * Find the sum of the multiples of 3 and 5 for numbers under 1000
+ */
+
 #ifndef PROJECT_EULER_PROBLEM_1_MULTIPLES_OF_3_AND_5_HPP
 #define PROJECT_EULER_PROBLEM_1_MULTIPLES_OF_3_AND_5_HPP
 
@@ -7,16 +16,34 @@
 
 namespace project_euler
 {
-	constexpr unsigned int multiple_upper_bound(unsigned int upper_bound, unsigned int multiple)
+	/**
+	 * @brief
+	 * Finds the sum of all multiple under an upper_bound
+	 */
+	constexpr std::size_t linear_sum_for_multiple(std::size_t upper_bound, std::size_t multiple)
 	{
-		return std::llround(upper_bound / multiple);
+		std::size_t multiple_upper_bound = std::llround(upper_bound / multiple);
+		return multiple * linear_sum(multiple_upper_bound);
 	}
 
-	constexpr unsigned int sum_multiples_of_3_5(unsigned int upper_bound)
+	/**
+	 * @brief
+	 * Finds the sum of multiples of 3 and 5 under an upper_bound
+	 *
+	 * This could be done in constant time by observing that for e.g. 1000
+	 *
+	 * The sum of 3s is: 3 + 6 + .. + 999 = 3 * (1 + 2 + .. + 333).
+	 * The sum of 5s is: 5 + 10 + .. + 995 = 5 * (1 + 2 + .. + 199).
+	 * Then the sum of 15s needs to be subtracted since it was added twice.
+	 *
+	 * Using the equation 1 + 2 + 3 + .. + n = n (n + 1) / 2 we can
+	 * obtain the answer in constant time.
+	 */
+	constexpr std::size_t sum_multiples_of_3_5(std::size_t upper_bound)
 	{
-		unsigned int sum_3 = 3 * linear_sum(multiple_upper_bound(upper_bound, 3));
-		unsigned int sum_5 = 5 * linear_sum(multiple_upper_bound(upper_bound, 5));
-		unsigned int sum_15 = 15 * linear_sum(multiple_upper_bound(upper_bound, 15));
+		std::size_t sum_3 = linear_sum_for_multiple(upper_bound, 3);
+		std::size_t sum_5 = linear_sum_for_multiple(upper_bound, 5);
+		std::size_t sum_15 = linear_sum_for_multiple(upper_bound, 15);
 		return sum_3 + sum_5 - sum_15;
 	}
 }

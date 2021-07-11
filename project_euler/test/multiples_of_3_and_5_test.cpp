@@ -22,3 +22,9 @@ TEST_NL(multiples_of_3_and_5, sum_up_to_15)
 	unsigned int sum = sum_multiples_of_3_5(15);
 	ASSERT_EQ(sum, 60);
 }
+
+TEST_NL(multiples_of_3_and_5, sum_up_to_30)
+{
+	unsigned int sum = sum_multiples_of_3_5(30);
+	ASSERT_EQ(sum, 225);
+}

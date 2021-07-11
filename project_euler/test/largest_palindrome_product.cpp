@@ -7,30 +7,6 @@
 using namespace project_euler;
 using namespace testing;
 
-TEST_NL(split_decimal, zero)
-{
-	auto digits = split_decimal(0U);
-	ASSERT_THAT(digits, ElementsAre(0U));
-}
-
-TEST_NL(split_decimal, single_digit)
-{
-	auto digits = split_decimal(1U);
-	ASSERT_THAT(digits, ElementsAre(1U));
-}
-
-TEST_NL(split_decimal, double_digit)
-{
-	auto digits = split_decimal(10U);
-	ASSERT_THAT(digits, ElementsAre(0U, 1U));
-}
-
-TEST_NL(split_decimal, triple_digit)
-{
-	auto digits = split_decimal(149);
-	ASSERT_THAT(digits, ElementsAre(9U, 4U, 1U));
-}
-
 TEST_NL(is_palindrome, zero)
 {
 	ASSERT_TRUE(is_palindrome(0U));
@@ -51,12 +27,17 @@ TEST_NL(is_palindrome, double_digit_valid)
 	ASSERT_TRUE(is_palindrome(44U));
 }
 
-TEST_NL(is_palindrome, valid_odd_number_of_digits)
+TEST_NL(is_palindrome, odd_number_of_digits_valid)
 {
 	ASSERT_TRUE(is_palindrome(454U));
 }
 
-TEST_NL(largest_palindrome, single_digit)
+TEST_NL(largest_palindrome, zero)
+{
+	ASSERT_EQ(largest_palindrome_product(0U), 0U);
+}
+
+TEST_NL(largest_palindrome, under_ten)
 {
 	ASSERT_EQ(largest_palindrome_product(10U), 9U);
 }

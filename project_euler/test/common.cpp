@@ -24,6 +24,12 @@ TEST_NL(largest_prime_factor, multiple_occuring_factor)
 	ASSERT_THAT(primes, ElementsAre(2U, 2U, 2U));
 }
 
+TEST_NL(list_primes, no_primes)
+{
+	auto primes = prime_list(0);
+	ASSERT_TRUE(primes.empty());
+}
+
 TEST_NL(list_primes, first_prime)
 {
 	auto primes = prime_list(2);
