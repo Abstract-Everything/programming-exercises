@@ -16,36 +16,43 @@
 
 namespace project_euler
 {
-	/**
-	 * @brief
-	 * Finds the sum of all multiple under an upper_bound
-	 */
-	constexpr std::size_t linear_sum_for_multiple(std::size_t upper_bound, std::size_t multiple)
+	class Sum_Multiples_Of_3_And_5
 	{
-		std::size_t multiple_upper_bound = std::llround(upper_bound / multiple);
-		return multiple * linear_sum(multiple_upper_bound);
-	}
+	public:
 
-	/**
-	 * @brief
-	 * Finds the sum of multiples of 3 and 5 under an upper_bound
-	 *
-	 * This could be done in constant time by observing that for e.g. 1000
-	 *
-	 * The sum of 3s is: 3 + 6 + .. + 999 = 3 * (1 + 2 + .. + 333).
-	 * The sum of 5s is: 5 + 10 + .. + 995 = 5 * (1 + 2 + .. + 199).
-	 * Then the sum of 15s needs to be subtracted since it was added twice.
-	 *
-	 * Using the equation 1 + 2 + 3 + .. + n = n (n + 1) / 2 we can
-	 * obtain the answer in constant time.
-	 */
-	constexpr std::size_t sum_multiples_of_3_5(std::size_t upper_bound)
-	{
-		std::size_t sum_3 = linear_sum_for_multiple(upper_bound, 3);
-		std::size_t sum_5 = linear_sum_for_multiple(upper_bound, 5);
-		std::size_t sum_15 = linear_sum_for_multiple(upper_bound, 15);
-		return sum_3 + sum_5 - sum_15;
-	}
+		static constexpr const char* name = "Sum multiples of 3 and 5";
+
+		/**
+		 * @brief
+		 * Finds the sum of multiples of 3 and 5 under an upper_bound
+		 *
+		 * This is a brute for method which goes through all of the
+		 * numbers up to an upper bound and check if each is a multiple.
+		 */
+		static std::size_t Naive(std::size_t upper_bound);
+
+		/**
+		 * @brief
+		 * Finds the sum of multiples of 3 and 5 under an upper_bound
+		 *
+		 * This could be done in constant time by observing that for e.g. 1000
+		 *
+		 * The sum of 3s is: 3 + 6 + .. + 999 = 3 * (1 + 2 + .. + 333).
+		 * The sum of 5s is: 5 + 10 + .. + 995 = 5 * (1 + 2 + .. + 199).
+		 * Then the sum of 15s needs to be subtracted since it was added twice.
+		 *
+		 * Using the equation 1 + 2 + 3 + .. + n = n (n + 1) / 2 we can
+		 * obtain the answer in constant time.
+		 */
+		static std::size_t Optimized(std::size_t upper_bound);
+
+	private:
+		/**
+		 * @brief
+		 * Finds the sum of all multiple under an upper_bound
+		 */
+		static std::size_t linear_sum_for_multiple(std::size_t upper_bound, std::size_t multiple);
+	};
 }
 
 #endif
