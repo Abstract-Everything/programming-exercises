@@ -15,7 +15,7 @@ using namespace project_euler;
 template<typename Func, typename... Arguments>
 std::size_t time_problem(Func function, Arguments&&... arguments)
 {
-	const std::size_t iterations = 5;
+	const std::size_t iterations = 500000;
 	std::size_t total = 0;
 	for (std::size_t i = 0; i < iterations; ++i)
 	{
@@ -40,8 +40,8 @@ int main()
 {
 	std::cout << "----- Answers -----" << "\n";
 	print_problem<Sum_Multiples_Of_3_And_5>(999);
+	print_problem<Even_Fibonacci_Numbers>(4'000'000);
 	std::cout
-		<< "Problem 2: " << accumulate_even_fibonacci(4'000'000) << "\n"
 		<< "Problem 3: " << largest_prime_factor(600'851'475'143) << "\n"
 		<< "Problem 4: " << largest_palindrome_product(999) << "\n"
 		<< "Problem 5: " << smallest_multiple(20) << "\n"

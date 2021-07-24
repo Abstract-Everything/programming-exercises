@@ -14,11 +14,25 @@
 
 namespace project_euler
 {
-	/**
-	 * @brief
-	 * Calculates the sum of even fibonacci numbers up to a bound
-	 */
-	std::size_t accumulate_even_fibonacci(std::size_t upper_bound);
+	class Even_Fibonacci_Numbers
+	{
+	public:
+		static constexpr const char* name = "Accumulate even fibonacci numbers";
+
+		/**
+		 * @brief
+		 * Calculates the sum of even fibonacci numbers up to a bound
+		 */
+		static std::size_t Naive(std::size_t upper_bound);
+
+		/**
+		 * @brief
+		 * Calculates the sum using a brute force approach like the
+		 * Naive method but with observation that every third fibonacci
+		 * number is an even number
+		 */
+		static std::size_t Optimized(std::size_t upper_bound);
+	};
 }
 
 #endif
