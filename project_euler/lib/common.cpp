@@ -12,7 +12,13 @@ namespace project_euler
 	{
 		std::vector<std::size_t> primes;
 
-		std::size_t divisor = 2;
+		while (number % 2 == 0)
+		{
+			number /= 2;
+			primes.push_back(2);
+		}
+
+		std::size_t divisor = 3;
 		while (number > 1)
 		{
 			if (number % divisor == 0)
@@ -22,7 +28,7 @@ namespace project_euler
 			}
 			else
 			{
-				divisor++;
+				divisor += 2;
 			}
 		}
 		return primes;

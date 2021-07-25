@@ -12,10 +12,18 @@
 
 using namespace project_euler;
 
+#define DEFINE_HAS_MEMBER_T(Member) \
+template<typename, typename = std::void_t<>> \
+struct has_member_t_##Member \
+: std::false_type { }; \
+template<typename T> \
+struct has_member_t_##Member<T, std::void_t<decltype(&T::Member)>> \
+: std::true_type { };
+
 template<typename Func, typename... Arguments>
 std::size_t time_problem(Func function, Arguments&&... arguments)
 {
-	const std::size_t iterations = 500000;
+	const std::size_t iterations = 50000;
 	std::size_t total = 0;
 	for (std::size_t i = 0; i < iterations; ++i)
 	{
@@ -27,13 +35,26 @@ std::size_t time_problem(Func function, Arguments&&... arguments)
 	return total / iterations;
 }
 
+DEFINE_HAS_MEMBER_T(Optimized)
+
+template<typename Problem, typename... Arguments, typename std::enable_if_t<has_member_t_Optimized<Problem>::value, bool> = true>
+void print_optimized_timing(Arguments&&... arguments) 
+{
+	std::cout << "\t" << "Optimized Timing: " << time_problem(Problem::Optimized, std::forward<Arguments>(arguments)...) << "ns" << "\n";
+}
+
+template<typename Problem, typename... Arguments, typename std::enable_if_t<!has_member_t_Optimized<Problem>::value, bool> = true>
+void print_optimized_timing(Arguments&&... arguments)
+{
+}
+
 template<typename Problem, typename... Arguments>
 void print_problem(Arguments&&... arguments)
 {
 	std::cout << "Problem Name: " << Problem::name << "\n"
-		<< "\t" << "Answer: " << Problem::Optimized(std::forward<Arguments>(arguments)...) << "\n"
-		<< "\t" << "Naive Timing: " << time_problem(Problem::Naive, std::forward<Arguments>(arguments)...) << "ns" << "\n"
-		<< "\t" << "Optimized Timing: " << time_problem(Problem::Optimized, std::forward<Arguments>(arguments)...) << "ns" << "\n";
+		<< "\t" << "Answer: " << Problem::Naive(std::forward<Arguments>(arguments)...) << "\n"
+		<< "\t" << "Naive Timing: " << time_problem(Problem::Naive, std::forward<Arguments>(arguments)...) << "ns" << "\n";
+	print_optimized_timing<Problem>(std::forward<Arguments>(arguments)...);
 }
 
 int main()
@@ -41,8 +62,8 @@ int main()
 	std::cout << "----- Answers -----" << "\n";
 	print_problem<Sum_Multiples_Of_3_And_5>(999);
 	print_problem<Even_Fibonacci_Numbers>(4'000'000);
+	print_problem<Largest_Prime_Factor>(600'851'475'143);
 	std::cout
-		<< "Problem 3: " << largest_prime_factor(600'851'475'143) << "\n"
 		<< "Problem 4: " << largest_palindrome_product(999) << "\n"
 		<< "Problem 5: " << smallest_multiple(20) << "\n"
 		<< "Problem 6: " << sum_square_difference(100U) << "\n"

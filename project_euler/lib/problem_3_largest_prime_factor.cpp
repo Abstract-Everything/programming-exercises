@@ -4,7 +4,7 @@
 
 namespace project_euler
 {
-	std::size_t largest_prime_factor(std::size_t number)
+	std::size_t Largest_Prime_Factor::Naive(std::size_t number)
 	{
 		return prime_factorization(number).back();
 	}
