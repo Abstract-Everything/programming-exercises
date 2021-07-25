@@ -65,8 +65,8 @@ int main()
 	print_problem<Largest_Prime_Factor>(600'851'475'143);
 	print_problem<Largest_Palindrome_Product>(999);
 	print_problem<Smallest_Multiple>(20);
+	print_problem<Sum_Square_Difference>(100);
 	std::cout
-		<< "Problem 6: " << sum_square_difference(100U) << "\n"
 		<< "Problem 7: " << ten_thousand_and_first_prime() << "\n"
 		<< "Problem 8: " << largest_product_in_a_series(problem_string, 13U) << "\n";
 }

@@ -7,16 +7,22 @@ using namespace project_euler;
 
 TEST_NL(sum_square_difference, up_to_one)
 {
-	ASSERT_EQ(sum_square_difference(1U), 0U);
+	ASSERT_EQ(Sum_Square_Difference::Naive(1U), 0U);
 }
 
 TEST_NL(sum_square_difference, up_to_two)
 {
-	ASSERT_EQ(sum_square_difference(2U), 4U);
+	ASSERT_EQ(Sum_Square_Difference::Naive(2U), 4U);
 }
 
 TEST_NL(sum_square_difference, up_to_ten)
 {
-	ASSERT_EQ(sum_square_difference(10U), 2640U);
+	ASSERT_EQ(Sum_Square_Difference::Naive(10U), 2640U);
 }
 
+TEST_NL(sum_square_difference, up_to_ten_optimized)
+{
+	std::size_t sum_naive = Sum_Square_Difference::Naive(10U);
+	std::size_t sum_optimized = Sum_Square_Difference::Optimized(10U);
+	ASSERT_EQ(sum_naive, sum_optimized);
+}
