@@ -8,17 +8,17 @@ using namespace project_euler;
 
 TEST_NL(smallest_multiple, single_digit)
 {
-	ASSERT_EQ(smallest_multiple(2U), 2U);
+	ASSERT_EQ(Smallest_Multiple::Naive(2U), 2U);
 }
 
 TEST_NL(smallest_multiple, two_digits)
 {
 	const std::size_t multiple = 2 * 2 * 3;
-	ASSERT_EQ(smallest_multiple(4U), multiple);
+	ASSERT_EQ(Smallest_Multiple::Naive(4U), multiple);
 }
 
 TEST_NL(smallest_multiple, ten_digits)
 {
 	const std::size_t multiple = 2 * 2 * 2 * 3 * 3 * 5 * 7;
-	ASSERT_EQ(smallest_multiple(10U), multiple);
+	ASSERT_EQ(Smallest_Multiple::Naive(10U), multiple);
 }

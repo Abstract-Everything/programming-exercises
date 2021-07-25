@@ -14,11 +14,17 @@
 
 namespace project_euler
 {
-	/*
-	 * @brief
-	 * Finds the smallest multiple divisible by all numbers below number
-	 */
-	std::size_t smallest_multiple(std::size_t number);
+	class Smallest_Multiple
+	{
+	public:
+		static constexpr const char* name = "Smallest multiple";
+
+		/*
+		 * @brief
+		 * Finds the smallest multiple divisible by all numbers below number
+		 */
+		static std::size_t Naive(std::size_t number);
+	};
 }
 
 #endif

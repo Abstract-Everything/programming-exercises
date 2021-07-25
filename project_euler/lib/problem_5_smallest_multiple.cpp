@@ -26,7 +26,7 @@ namespace project_euler
 	 *
 	 * product = (2 * 2 * 2) * (3 * 3) * (5) * (7) = 2520
 	 */
-	std::size_t smallest_multiple(std::size_t number)
+	std::size_t Smallest_Multiple::Naive(std::size_t number)
 	{
 		std::map<std::size_t, std::size_t> aggregate_primes;
 		for (std::size_t i = 2U; i <= number; ++i)

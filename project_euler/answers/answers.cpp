@@ -64,8 +64,8 @@ int main()
 	print_problem<Even_Fibonacci_Numbers>(4'000'000);
 	print_problem<Largest_Prime_Factor>(600'851'475'143);
 	print_problem<Largest_Palindrome_Product>(999);
+	print_problem<Smallest_Multiple>(20);
 	std::cout
-		<< "Problem 5: " << smallest_multiple(20) << "\n"
 		<< "Problem 6: " << sum_square_difference(100U) << "\n"
 		<< "Problem 7: " << ten_thousand_and_first_prime() << "\n"
 		<< "Problem 8: " << largest_product_in_a_series(problem_string, 13U) << "\n";
