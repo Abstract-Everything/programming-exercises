@@ -5,20 +5,6 @@
 
 namespace project_euler
 {
-	bool is_palindrome(std::size_t number)
-	{
-		std::string digits = std::to_string(number);
-		for (std::size_t front_index = 0; front_index < digits.size() / 2; ++front_index)
-		{
-			const std::size_t back_index = digits.size() - 1 - front_index;
-			if(digits[front_index] != digits[back_index])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-
 	/*
 	 * A brute force methods which checks all the possible products for a palindrome.
 	 * The loops check the numbers diagonally (right to left) to ensure that the largest number is tried first.
@@ -42,7 +28,7 @@ namespace project_euler
 	 * ..
 	 * ..
 	 */
-	std::size_t largest_palindrome_product(std::size_t upper_bound)
+	std::size_t Largest_Palindrome_Product::Naive(std::size_t upper_bound)
 	{
 		for (std::size_t diagonal = upper_bound; diagonal > 0; --diagonal)
 		{
@@ -58,5 +44,19 @@ namespace project_euler
 		}
 
 		return 0U;
+	}
+
+	bool Largest_Palindrome_Product::is_palindrome(std::size_t number)
+	{
+		std::string digits = std::to_string(number);
+		for (std::size_t front_index = 0; front_index < digits.size() / 2; ++front_index)
+		{
+			const std::size_t back_index = digits.size() - 1 - front_index;
+			if(digits[front_index] != digits[back_index])
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 }
