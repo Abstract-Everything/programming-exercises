@@ -23,7 +23,7 @@ struct has_member_t_##Member<T, std::void_t<decltype(&T::Member)>> \
 template<typename Func, typename... Arguments>
 std::size_t time_problem(Func function, Arguments&&... arguments)
 {
-	const std::size_t iterations = 50000;
+	const std::size_t iterations = 50;
 	std::size_t total = 0;
 	for (std::size_t i = 0; i < iterations; ++i)
 	{
@@ -66,7 +66,7 @@ int main()
 	print_problem<Largest_Palindrome_Product>(999);
 	print_problem<Smallest_Multiple>(20);
 	print_problem<Sum_Square_Difference>(100);
+	print_problem<Ten_Thousand_And_First_Prime>();
 	std::cout
-		<< "Problem 7: " << ten_thousand_and_first_prime() << "\n"
 		<< "Problem 8: " << largest_product_in_a_series(problem_string, 13U) << "\n";
 }

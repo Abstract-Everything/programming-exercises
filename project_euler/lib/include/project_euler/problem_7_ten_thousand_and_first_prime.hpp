@@ -14,10 +14,16 @@
 
 namespace project_euler
 {
-	/**
-	 * Returns the then thousand and first prime
-	 */
-	std::size_t ten_thousand_and_first_prime();
+	class Ten_Thousand_And_First_Prime
+	{
+	public:
+		static constexpr const char* name = "Ten thousand and first prime";
+
+		/**
+		 * Returns the ten thousand and first prime
+		 */
+		static std::size_t Naive();
+	};
 }
 
 #endif
