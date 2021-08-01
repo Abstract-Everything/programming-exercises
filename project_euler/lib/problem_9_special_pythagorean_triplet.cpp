@@ -14,7 +14,12 @@ namespace project_euler
 
 		double c_squared = static_cast<double>(a * a) + static_cast<double>(b * b);
 		double c = std::sqrt(c_squared);
-		return { std::fmod(c, 1.0) == 0.0, static_cast<std::size_t>(c) };
+
+		double integer = 0.0;
+		double fraction = 0.0;
+		fraction = std::modf(c, &integer);
+
+		return { fraction == 0.0, static_cast<std::size_t>(c) };
 	}
 
 	std::size_t Special_Pythagorean_Triplet::Naive(std::size_t sum)

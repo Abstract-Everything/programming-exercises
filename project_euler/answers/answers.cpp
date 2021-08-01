@@ -7,6 +7,7 @@
 #include <project_euler/problem_7_ten_thousand_and_first_prime.hpp>
 #include <project_euler/problem_8_largest_product_in_a_series.hpp>
 #include <project_euler/problem_9_special_pythagorean_triplet.hpp>
+#include <project_euler/problem_10_summation_of_primes.hpp>
 
 #include <iostream>
 #include <chrono>
@@ -71,4 +72,5 @@ int main()
 	print_problem<Ten_Thousand_And_First_Prime>();
 	print_problem<Largest_Product_In_A_Series>(Largest_Product_In_A_Series::problem_string, 13U);
 	print_problem<Special_Pythagorean_Triplet>(1000U);
+	print_problem<Summation_Of_Primes>(2'000'000);
 }

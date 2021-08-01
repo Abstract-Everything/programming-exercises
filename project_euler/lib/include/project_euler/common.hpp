@@ -73,6 +73,15 @@ namespace project_euler
 	 * number_of_primes The number of primes which should be calculated
 	 */
 	std::vector<std::size_t> prime_list(std::size_t number_of_primes);
+
+	/**
+	 * @brief
+	 * Computes an ordered list of primes under a given value.
+	 *
+	 * @param
+	 * upper_bound The prime searching limit
+	 */
+	std::vector<std::size_t> primes_under(std::size_t upper_bound);
 }
 
 #endif

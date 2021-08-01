@@ -36,8 +36,27 @@ TEST_NL(list_primes, first_prime)
 	ASSERT_THAT(primes, ElementsAre(2U, 3U));
 }
 
-TEST_NL(list_primes, up_to_ten)
+TEST_NL(list_primes, up_five_primes)
 {
 	auto primes = prime_list(5);
 	ASSERT_THAT(primes, ElementsAre(2U, 3U, 5U, 7U, 11U));
+}
+
+TEST_NL(primes_under, up_to_ten)
+{
+	auto primes = primes_under(10U);
+	ASSERT_THAT(primes, ElementsAre(2U, 3U, 5U, 7U));
+}
+
+TEST_NL(primes_under, include_upper_bound)
+{
+	auto primes = primes_under(11U);
+	ASSERT_THAT(primes, ElementsAre(2U, 3U, 5U, 7U, 11U));
+}
+
+TEST_NL(primes_under, first_100_primes)
+{
+	auto list = prime_list(100U);
+	auto under = primes_under(list.back());
+	EXPECT_EQ(list, under);
 }
