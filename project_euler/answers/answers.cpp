@@ -67,6 +67,5 @@ int main()
 	print_problem<Smallest_Multiple>(20);
 	print_problem<Sum_Square_Difference>(100);
 	print_problem<Ten_Thousand_And_First_Prime>();
-	std::cout
-		<< "Problem 8: " << largest_product_in_a_series(problem_string, 13U) << "\n";
+	print_problem<Largest_Product_In_A_Series>(Largest_Product_In_A_Series::problem_string, 13U);
 }
