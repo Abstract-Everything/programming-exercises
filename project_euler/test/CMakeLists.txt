@@ -13,7 +13,8 @@ add_executable(
 	${CMAKE_CURRENT_LIST_DIR}/largest_palindrome_product.cpp
 	${CMAKE_CURRENT_LIST_DIR}/smallest_multiple.cpp
 	${CMAKE_CURRENT_LIST_DIR}/sum_square_difference.cpp
-	${CMAKE_CURRENT_LIST_DIR}/largest_product_in_a_series.cpp)
+	${CMAKE_CURRENT_LIST_DIR}/largest_product_in_a_series.cpp
+	${CMAKE_CURRENT_LIST_DIR}/special_pythagorean_triplet.cpp)
 
 target_link_libraries(
 	project_euler_test

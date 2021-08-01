@@ -6,6 +6,7 @@
 #include <project_euler/problem_6_sum_square_difference.hpp>
 #include <project_euler/problem_7_ten_thousand_and_first_prime.hpp>
 #include <project_euler/problem_8_largest_product_in_a_series.hpp>
+#include <project_euler/problem_9_special_pythagorean_triplet.hpp>
 
 #include <iostream>
 #include <chrono>
@@ -55,6 +56,7 @@ void print_problem(Arguments&&... arguments)
 		<< "\t" << "Answer: " << Problem::Naive(std::forward<Arguments>(arguments)...) << "\n"
 		<< "\t" << "Naive Timing: " << time_problem(Problem::Naive, std::forward<Arguments>(arguments)...) << "ns" << "\n";
 	print_optimized_timing<Problem>(std::forward<Arguments>(arguments)...);
+	std::cout << "\n";
 }
 
 int main()
@@ -68,4 +70,5 @@ int main()
 	print_problem<Sum_Square_Difference>(100);
 	print_problem<Ten_Thousand_And_First_Prime>();
 	print_problem<Largest_Product_In_A_Series>(Largest_Product_In_A_Series::problem_string, 13U);
+	print_problem<Special_Pythagorean_Triplet>(1000U);
 }
