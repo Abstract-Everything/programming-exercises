@@ -9,7 +9,8 @@ add_library(project_euler_lib STATIC
 	problem_7_ten_thousand_and_first_prime.cpp
 	problem_8_largest_product_in_a_series.cpp
 	problem_9_special_pythagorean_triplet.cpp
-	problem_10_summation_of_primes.cpp)
+	problem_10_summation_of_primes.cpp
+	problem_11_largest_product_in_a_grid.cpp)
 
 target_include_directories(
 	project_euler_lib

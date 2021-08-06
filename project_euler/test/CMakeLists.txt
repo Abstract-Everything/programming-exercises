@@ -15,7 +15,8 @@ add_executable(
 	${CMAKE_CURRENT_LIST_DIR}/sum_square_difference.cpp
 	${CMAKE_CURRENT_LIST_DIR}/largest_product_in_a_series.cpp
 	${CMAKE_CURRENT_LIST_DIR}/special_pythagorean_triplet.cpp
-	${CMAKE_CURRENT_LIST_DIR}/summation_of_primes.cpp)
+	${CMAKE_CURRENT_LIST_DIR}/summation_of_primes.cpp
+	${CMAKE_CURRENT_LIST_DIR}/largest_product_in_a_grid.cpp)
 
 target_link_libraries(
 	project_euler_test

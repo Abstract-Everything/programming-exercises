@@ -8,6 +8,7 @@
 #include <project_euler/problem_8_largest_product_in_a_series.hpp>
 #include <project_euler/problem_9_special_pythagorean_triplet.hpp>
 #include <project_euler/problem_10_summation_of_primes.hpp>
+#include <project_euler/problem_11_largest_product_in_a_grid.hpp>
 
 #include <iostream>
 #include <chrono>
@@ -73,4 +74,5 @@ int main()
 	print_problem<Largest_Product_In_A_Series>(Largest_Product_In_A_Series::problem_string, 13U);
 	print_problem<Special_Pythagorean_Triplet>(1000U);
 	print_problem<Summation_Of_Primes>(2'000'000);
+	print_problem<Largest_Product_In_A_Grid>(Largest_Product_In_A_Grid::problem_string, 4);
 }
