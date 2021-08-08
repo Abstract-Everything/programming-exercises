@@ -53,36 +53,29 @@ namespace project_euler
 
 		/**
 		 * @brief
+		 * This is still a brute force approach but instead of checking
+		 * cell by cell a whole row is checked. This allows an
+		 * accumulation of the row's values reducing the number of
+		 * operations needed.
+		 */
+		static std::size_t Optimized(const std::string& grid, std::size_t adjacent_digits);
+
+		/**
+		 * @brief
 		 * Converts a grid of space separated numbers to a nested vector
 		 */
 		static Grid read_grid(const std::string& grid);
 
 	private:
-		static std::size_t horizontal_multiply(
-			const Grid& grid,
-			std::size_t adjacent_digits,
-			std::size_t i,
-			std::size_t j);
-
-		static std::size_t vertical_multiply(
-			const Grid& grid,
-			std::size_t adjacent_digits,
-			std::size_t i,
-			std::size_t j);
-
-		static std::size_t downward_multiply(
-			const Grid& grid,
-			std::size_t adjacent_digits,
-			std::size_t i,
-			std::size_t j);
-
-		static std::size_t upward_multiply(
-			const Grid& grid,
-			std::size_t adjacent_digits,
-			std::size_t i,
-			std::size_t j);
-
 		static std::size_t directional_multiply(
+			const Grid& grid,
+			std::size_t adjacent_digits,
+			std::size_t i,
+			std::size_t j,
+			int h_direction,
+			int v_direction);
+
+		static std::size_t continious_multiply(
 			const Grid& grid,
 			std::size_t adjacent_digits,
 			std::size_t i,
