@@ -16,7 +16,8 @@ add_executable(
 	largest_product_in_a_series.cpp
 	special_pythagorean_triplet.cpp
 	summation_of_primes.cpp
-	largest_product_in_a_grid.cpp)
+	largest_product_in_a_grid.cpp
+	highly_divisible_triangular_number.cpp)
 
 target_link_libraries(
 	project_euler_test
