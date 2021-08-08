@@ -9,19 +9,23 @@ using namespace testing;
 TEST_NL(largest_prime_factor, prime_factorize_two)
 {
 	auto primes = prime_factorization(2);
-	ASSERT_THAT(primes, ElementsAre(2U));
+	ASSERT_THAT(primes, ElementsAre(
+		std::pair<std::size_t, std::size_t>{ 2U , 1 }));
 }
 
 TEST_NL(largest_prime_factor, prime_factorize_size)
 {
 	auto primes = prime_factorization(6);
-	ASSERT_THAT(primes, ElementsAre(2U, 3U));
+	ASSERT_THAT(primes, ElementsAre(
+		std::pair<std::size_t, std::size_t>{ 2U , 1 },
+		std::pair<std::size_t, std::size_t>{ 3U , 1 }));
 }
 
 TEST_NL(largest_prime_factor, multiple_occuring_factor)
 {
 	auto primes = prime_factorization(8);
-	ASSERT_THAT(primes, ElementsAre(2U, 2U, 2U));
+	ASSERT_THAT(primes, ElementsAre(
+		std::pair<std::size_t, std::size_t>{ 2U , 3 }));
 }
 
 TEST_NL(list_primes, no_primes)

@@ -6,6 +6,6 @@ namespace project_euler
 {
 	std::size_t Largest_Prime_Factor::Naive(std::size_t number)
 	{
-		return prime_factorization(number).back();
+		return prime_factorization(number).rbegin()->first;
 	}
 }

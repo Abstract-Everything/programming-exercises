@@ -31,11 +31,11 @@ namespace project_euler
 		std::map<std::size_t, std::size_t> aggregate_primes;
 		for (std::size_t i = 2U; i <= number; ++i)
 		{
-			std::vector<std::size_t> primes = prime_factorization(i);
-			for (auto prime : primes)
+			for (auto pair : prime_factorization(i))
 			{
-				std::size_t count = std::count(primes.begin(), primes.end(), prime);
-				aggregate_primes[prime] = std::max(aggregate_primes[prime], count);
+				aggregate_primes[pair.first] = std::max(
+						aggregate_primes[pair.first],
+						pair.second);
 			}
 		}
 

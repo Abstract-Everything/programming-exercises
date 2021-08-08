@@ -11,6 +11,7 @@
 #include <vector>
 #include <cassert>
 #include <type_traits>
+#include <map>
 
 namespace project_euler
 {
@@ -59,11 +60,13 @@ namespace project_euler
 		return number * (number + 1) * (2 * number + 1) / 6;
 	}
 
+	using Prime_Count = std::map<std::size_t, std::size_t>;
+
 	/**
 	 * @brief
 	 * Calculates the prime factors for a given number in O(n ^ (1/2)) worst case time
 	 */
-	std::vector<std::size_t> prime_factorization(std::size_t number);
+	Prime_Count prime_factorization(std::size_t number);
 
 	/**
 	 * @brief

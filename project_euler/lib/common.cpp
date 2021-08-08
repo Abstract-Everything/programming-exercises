@@ -8,14 +8,14 @@ namespace project_euler
 	 * This is a brute force factorization function where all primes
 	 * are tried starting from the lowest going up.
 	 */
-	std::vector<std::size_t> prime_factorization(std::size_t number)
+	Prime_Count prime_factorization(std::size_t number)
 	{
-		std::vector<std::size_t> primes;
+		Prime_Count primes;
 
 		while (number % 2 == 0)
 		{
 			number /= 2;
-			primes.push_back(2);
+			primes[2]++;
 		}
 
 		std::size_t divisor = 3;
@@ -24,7 +24,7 @@ namespace project_euler
 			if (number % divisor == 0)
 			{
 				number /= divisor;
-				primes.push_back(divisor);
+				primes[divisor]++;
 			}
 			else
 			{
